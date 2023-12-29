@@ -31,6 +31,16 @@ inputDate.addEventListener("keydown", (e) => {
     inputDate.value = dateNumber.join("");
 });
 
+inputCVV.addEventListener("keydown", (e) => {
+    if (e.key == "Tab") {
+        return;
+    }
+    
+    e.preventDefault();
+    handleInput(maskCVV, e.key, cvvNumber);
+    inputCVV.value = cvvNumber.join("");
+});
+
 function handleInput(mask, key, arr) {
     let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
