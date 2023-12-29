@@ -6,3 +6,8 @@ const maskNumber = '####-####-####-####';
 const maskDate = '##/##';
 const maskCVV = '###';
 
+let current = "";
+let cardNumber = [];
+let dateNumber = [];
+let cvvNumber = [];
+
