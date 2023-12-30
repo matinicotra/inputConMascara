@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
 }
 
 :root {
@@ -10,3 +14,67 @@
     --clr-dark-grey: hsl(279, 6%, 55%);
     --clr-dark-violet: hsl(278, 68%, 11%);
 }
+
+.app {
+    background-image: url("./img/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+}
+
+.card {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+.card-front {
+    align-self: start;
+    width: 85%;
+    order: 2;
+    margin-top: -4rem;
+    position: relative;
+}
+
+.card-front__data {
+    position: absolute;
+    inset: 0;
+    color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.card-front__data img {
+    max-width: 3.5rem;
+}
+
+.card-back {
+    align-self: end;
+    width: 85%;
+    order: 1;
+    position: relative;
+}
+
+.card-back__data {
+    position: absolute;
+    inset: 0;
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 12%;
+    padding-bottom: .5rem;
+    font-size: .75rem;
+}
+
+.card-cvv {
+
+}
+
