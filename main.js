@@ -1,6 +1,6 @@
-const inputCard = document.querySelector('#inputCard');
-const inputDate = document.querySelector('#inputDate');
-const inputCVV = document.querySelector('#inputCVV');
+const inputCard = document.querySelector('#input-card');
+const inputDate = document.querySelector('#input-exp');
+const inputCVV = document.querySelector('#input-cvv');
 
 const maskNumber = "####-####-####-####";
 const maskDate = "##/##";
