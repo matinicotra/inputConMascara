@@ -145,3 +145,45 @@
     border-radius: .5rem;
     cursor: pointer;
 }
+
+@media screen and (min-width: 800px) {
+
+    .app {
+        background-image: url("./img/bg-main-desktop.png");
+        background-position: left;
+        background-size: auto 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+    }
+
+    .card {
+        padding-inline: 3rem;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .card-front {
+        order: 1;
+        margin-top: 0;
+        width: 20rem;
+        max-width: unset;
+    }
+    
+    .card-back {
+        order: 2;
+        width: 20rem;
+        max-width: unset;
+    }
+    
+    .form-app {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    .form {
+        width: 25rem;
+    }
+}
