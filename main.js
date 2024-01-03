@@ -8,6 +8,10 @@ const cardCard = document.querySelector("#card-number");
 const cardDate = document.querySelector("#card-date");
 const cardCVV = document.querySelector("#card-cvv");
 
+const form = document.querySelector("#form");
+const thankYou = document.querySelector("#thank-you");
+const continueBtn = document.querySelector("#continue");
+
 const maskNumber = "#### #### #### ####";
 const maskDate = "##/##";
 const maskCVV = "###";
@@ -91,3 +95,19 @@ function handleInput(mask, key, arr) {
         }
     }
 }
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.classList.add("disabled");
+    thankYou.classList.remove("disabled");
+});
+
+continueBtn.addEventListener("click", () => {
+    form.classList.remove("disabled");
+    thankYou.classList.add("disabled");
+    form.reset();
+    cardName.innerText = "Jane Applessed";
+    cardCard.innerText = "0000 0000 0000 0000";
+    cardDate.innerText = "00/00";
+    cardCVV.innerText = "000";
+});
