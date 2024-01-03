@@ -1,8 +1,14 @@
-const inputCard = document.querySelector('#input-card');
-const inputDate = document.querySelector('#input-exp');
-const inputCVV = document.querySelector('#input-cvv');
+const inputName = document.querySelector("#input-name")
+const inputCard = document.querySelector("#input-card");
+const inputDate = document.querySelector("#input-date");
+const inputCVV = document.querySelector("#input-cvv");
 
-const maskNumber = "####-####-####-####";
+const cardName = document.querySelector("#card-name")
+const cardCard = document.querySelector("#card-number");
+const cardDate = document.querySelector("#card-date");
+const cardCVV = document.querySelector("#card-cvv");
+
+const maskNumber = "#### #### #### ####";
 const maskDate = "##/##";
 const maskCVV = "###";
 
@@ -11,7 +17,21 @@ let cardNumber = [];
 let dateNumber = [];
 let cvvNumber = [];
 
+inputName.addEventListener("input", () => {
+    cardName.innerText = inputName.value;
+
+    if (inputName.value.length === 0) {
+        cardName.innerText = "Jane Applessed";
+    }
+});
+
 inputCard.addEventListener("keydown", (e) => {
+    cardCard.innerText = inputCard.value;
+
+    if (inputCard.value.length === 0) {
+        cardCard.innerText = "0000 0000 0000 0000";
+    }
+    
     if (e.key == "Tab") {
         return;
     }
@@ -22,6 +42,12 @@ inputCard.addEventListener("keydown", (e) => {
 });
 
 inputDate.addEventListener("keydown", (e) => {
+    cardDate.innerText = inputDate.value;
+
+    if (inputDate.value.length === 0) {
+        cardDate.innerText = "00/00";
+    }
+    
     if (e.key == "Tab") {
         return;
     }
@@ -29,9 +55,16 @@ inputDate.addEventListener("keydown", (e) => {
     e.preventDefault();
     handleInput(maskDate, e.key, dateNumber);
     inputDate.value = dateNumber.join("");
+    
 });
 
 inputCVV.addEventListener("keydown", (e) => {
+    cardCVV.innerText = inputCVV.value;
+
+    if (inputCVV.value.length === 0) {
+        cardCVV.innerText = "000";
+    }
+
     if (e.key == "Tab") {
         return;
     }
@@ -50,7 +83,7 @@ function handleInput(mask, key, arr) {
     }
 
     if (numbers.includes(key) && arr.length + 1 <= mask.length) {
-        if (mask[arr.length] == "-" || mask[arr.length] == "/") {
+        if (mask[arr.length] == "-" || mask[arr.length] == "/" || mask[arr.length] == " ") {
             arr.push(mask[arr.length], key);
         }
         else {
