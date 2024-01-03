@@ -47,12 +47,34 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 1rem;
     justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    
+}
+
+.card-front__data > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
 }
 
 .card-front__data img {
     max-width: 3.5rem;
+}
+
+.card-number {
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+}
+
+.card-name-date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: .75rem;
 }
 
 .card-back {
@@ -72,9 +94,5 @@
     padding-right: 12%;
     padding-bottom: .5rem;
     font-size: .75rem;
-}
-
-.card-cvv {
-
 }
 
